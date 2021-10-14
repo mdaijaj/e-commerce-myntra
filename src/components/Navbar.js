@@ -1,13 +1,14 @@
 // import 'bootstrap/dist/css/bootstrap.css'
 import { NavLink } from 'react-router-dom';
 import React, { useState } from 'react';
+import './Footer.css'
 import "../App.css"  //22
-
 
 const Navbar = () => {
     return (
         <>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            {/* <nav className="navbar navbar-expand-lg navbar-light navbar topnavbar"> */}
+            <nav className="aijaj navbar navbar-expand-lg navbar-light">
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -53,8 +54,12 @@ const Navbar = () => {
                     </svg></button>
                 </div>
             </nav>
+
         </>
     )
 }
+
+
+
 
 export default Navbar;

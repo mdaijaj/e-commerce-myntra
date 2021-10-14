@@ -1,4 +1,5 @@
 import react from "react";
+import Navbar from './Navbar';
 
 
 const  Home= () => {
