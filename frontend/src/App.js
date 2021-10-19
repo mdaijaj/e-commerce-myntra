@@ -7,10 +7,10 @@ import Home from './components/Home';
 import Kid from './components/Kid';
 import HomeLiving from './components/HomeLiving'
 import Errorpage from './components/ErrorPage';
-// import Contact from './components/Contact';
-// import Login from './components/Login';
-// import Signup from './components/Signup';
+import Register from './components/Register';
+import Login from './components/Login';
 // import Logout from './components/Logout';
+// import Contact from './components/Contact';
 
 
 const Routing =()=>{
@@ -36,6 +36,14 @@ const Routing =()=>{
 
         <Route path="/homeliving">
           <HomeLiving/>
+        </Route>
+
+        <Route path="/register">
+          <Register/>
+        </Route>
+
+        <Route path="/login">
+          <Login/>
         </Route>
 
         <Route>

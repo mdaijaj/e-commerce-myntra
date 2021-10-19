@@ -1,9 +1,9 @@
 import react from "react";
 
-const Signup = () => {
+const Login = () => {
     return (
         <>
-            <h2> This is women collection page</h2>
+            <h2> This is Login components</h2>
             <form>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
@@ -24,4 +24,4 @@ const Signup = () => {
     );
 }
 
-export default Signup;
+export default Login;
