@@ -1,38 +1,39 @@
 // import 'bootstrap/dist/css/bootstrap.css'
-import { NavLink } from 'react-router-dom';
 import React, { useState } from 'react';
+import {NavLink} from 'react-router-dom';
 import Register from './Register';
 import "../App.css"  //22
 
 const Navbar = () => {
     return (
         <>
+        
             {/* <nav className="navbar navbar-expand-lg navbar-light navbar topnavbar"> */}
             <nav className="aijaj navbar navbar-expand-lg navbar-light">
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-                    <a className="navbar-brand" href="#"> <img src="https://www.thenewsminute.com/sites/default/files/Myntra_Logo_1200x800.jpg" width="50px" height="50px"/></a>
+                    <a className="navbar-brand" to="#"> <img src="https://www.thenewsminute.com/sites/default/files/Myntra_Logo_1200x800.jpg" width="50px" height="50px"/></a>
                     <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
 
                         <li className="nav-item active">
-                            <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
+                            <NavLink className="nav-link" to="/">Home <span className="sr-only">(current)</span></NavLink>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/men">Men</a>
+                            <NavLink className="nav-link" to="/men">Men</NavLink>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/women">Women</a>
+                            <NavLink className="nav-link" to="/women">Women</NavLink>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/kid">Kid</a>
+                            <NavLink className="nav-link" to="/kid">Kid</NavLink>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/homeLiving">Home & Living</a>
+                            <NavLink className="nav-link" to="/homeLiving">Home & Living</NavLink>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/beauty">Beauty</a>
+                            <NavLink className="nav-link" to="/beauty">Beauty</NavLink>
                         </li>
                     </ul>
                     <form className="form-inline my-2 my-lg-0">
@@ -71,20 +72,20 @@ const Navbar = () => {
                                 </div>
                                 <div>
                                     <ul>
-                                        <li><a href="#">Orders</a></li>
-                                        <li><a href="#"> Wishlist</a></li>
-                                        <li><a href="#"> Gift Cards </a></li>
-                                        <li><a href="#"> Contact Us</a></li>
-                                        <li><a href="#"> Myntra InsiderNew </a></li>
+                                        <li><NavLink to="#">Orders</NavLink></li>
+                                        <li><NavLink to="#"> Wishlist</NavLink></li>
+                                        <li><NavLink to="#"> Gift Cards </NavLink></li>
+                                        <li><NavLink to="#"> Contact Us</NavLink></li>
+                                        <li><NavLink to="#"> Myntra InsiderNew </NavLink></li>
                                     </ul>
                                 </div>
 
                                 <div>
                                     <ul>
-                                        <li> <a href="#"> Myntra Credit </a></li>
-                                        <li> <a href="#">Coupons</a></li>
-                                        <li> <a href="#">Saved Cards</a></li>
-                                        <li> <a href="#">Saved Addresses</a></li>
+                                        <li> <NavLink to="#"> Myntra Credit </NavLink></li>
+                                        <li> <NavLink to="#">Coupons</NavLink></li>
+                                        <li> <NavLink to="#">Saved Cards</NavLink></li>
+                                        <li> <NavLink to="#">Saved Addresses</NavLink></li>
                                     </ul>
                                 </div>
                                 <div className="modal-footer">

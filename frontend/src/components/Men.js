@@ -55,8 +55,6 @@ const Men = () => {
           <div class="card h-50">
             <img src="https://assets.myntassets.com/w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2020/8/31/7c28bc7a-0184-44b2-8666-ea1438d595561598892377316-J_J.jpg" class="card-img-top" alt="..." />
             <div class ="card-body">
-            {/* <h5 class ="card-title">Card title</h5>
-            <p class ="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.This content is a little bit longer.</p> */}
             </div>
           </div>
         </div>
@@ -162,7 +160,7 @@ const Men = () => {
           <center><strong>Sports Accessries</strong></center>
       </div>
       <div className="circle">
-          <img className="circle" src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/13471916/2021/2/9/a9a87e2a-f8c8-4953-9e5f-b8c1b8f4ff201612846540076-boAT-Unisex-Black-Storm-Smart-Watch-621612846538704-1.jpg"></img>
+          <img className="circle" src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/13471916/2021/2/9/a9a87e2a-f8c8-4953-9e5f-b8c1b8f4ff201612846540076-boAT-Unisex-Black-Storm-Smart-Watch-621612846538704-1.jpghttps://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/13471916/2021/2/9/a9a87e2a-f8c8-4953-9e5f-b8c1b8f4ff201612846540076-boAT-Unisex-Black-Storm-Smart-Watch-621612846538704-1.jpg"></img>
           <center><strong>FashionWear & Accesseries</strong></center>
       </div>
       <div className="circle">
@@ -170,8 +168,63 @@ const Men = () => {
           <center><strong>Bag</strong></center>
       </div>
     </div>
-
     <br/><br/>
+
+    <center><h2> Best Selling LIFe</h2></center>
+      <div className="main_div">
+        <div className="circle">
+          <img className="circle" src="https://assets.myntassets.com/f_webp,w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2021/10/14/6996477e-1bc4-4ee7-a65c-f65e038ac4fc1634186825775-QL_MDS_T-Shirts.jpg"></img>
+            <center><strong>Topwear</strong></center>
+        </div>
+        <div className="circle">
+        <img className="circle" src="https://assets.myntassets.com/f_webp,w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2021/10/14/153c4d3f-57e5-4145-ab8c-7f939a5ba97e1634185854336-QL_MDS_Shirts.jpg"></img>
+          <center><strong>Bottomwear</strong></center>
+      </div>
+      <div className="circle">
+        <img className="circle" src="https://assets.myntassets.com/f_webp,w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2021/10/14/dbc6eaa5-45a1-445f-801a-3345e5d4f8d21634185854261-QL_MDS_FormalShoes_.jpg"></img>
+          <center><strong>Footwear</strong></center>
+      </div>
+      <div className="circle">
+        <img className="circle" src="https://assets.myntassets.com/f_webp,w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2021/10/14/f913e26b-29b2-42c6-ac23-53c852c853b41634185854295-QL_MDS_Loungewear_.jpg"></img>
+          <center><strong>Sports Accessries</strong></center>
+      </div>
+      <div className="circle">
+          <img className="circle" src="https://assets.myntassets.com/f_webp,w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2021/10/14/a4545bf9-bedc-414a-adfd-7b5f14d5311a1634187088990-QL_MDS_Handbags.jpg"></img>
+          {/* <center><strong>FashionWear & Accesseries</strong></center> */}
+      </div>
+      <div className="circle">
+        <img className="circle" src="https://assets.myntassets.com/f_webp,w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2021/10/14/a56e4b2f-4a6a-4735-9c55-e13f55dbd9f31634185854288-QL_MDS_Kurtas_KurtaSets.jpg"></img>
+          <center><strong>Bag</strong></center>
+      </div>
+    </div>
+    <div className="main_div">
+        <div className="circle">
+          <img className="circle" src="https://assets.myntassets.com/f_webp,w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2021/10/14/eb2bf069-75fe-4190-94f1-4d3fa691d1661634187388757-QL_MDS_KurtaSets_.jpg"></img>
+            <center><strong>Topwear</strong></center>
+        </div>
+        <div className="circle">
+        <img className="circle" src="https://assets.myntassets.com/f_webp,w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2021/10/14/239e20aa-f99e-40db-8b8e-87ee510898471634186825758-QL_MDS_Trackpants_.jpg"></img>
+          <center><strong>Bottomwear</strong></center>
+      </div>
+      <div className="circle">
+        <img className="circle" src="https://assets.myntassets.com/f_webp,w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2021/10/14/259e4d63-8f84-4c49-bea2-47b6e1faceab1634186825726-QL_MDS_Smartwatches_.jpg"></img>
+          <center><strong>Footwear</strong></center>
+      </div>
+      <div className="circle">
+        <img className="circle" src="https://assets.myntassets.com/f_webp,w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2021/10/14/9b2b0531-535d-4275-9144-5c1f5cc2a18d1634187388767-QL_MDS_Sarees_.jpg"></img>
+          <center><strong>Sports Accessries</strong></center>
+      </div>
+      <div className="circle">
+          <img className="circle" src="https://assets.myntassets.com/f_webp,w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2021/10/14/9ad6e873-8e90-41b4-a180-0c04ffbf4ecc1634185854328-QL_MDS_Sandals_.jpg"></img>
+          <center><strong>FashionWear & Accesseries</strong></center>
+      </div>
+      <div className="circle">
+        <img className="circle" src="https://assets.myntassets.com/f_webp,w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2021/10/14/1d06c5c1-9228-4142-b073-91b34f9727071634187088968-QL_MDS_Dresses_.jpg"></img>
+          <center><strong>Bag</strong></center>
+      </div>
+    </div>
+    <br/><br/>
+
       
       {/* footer */}
       <div className="footerCommon">
