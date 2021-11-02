@@ -14,6 +14,13 @@ const Home = () => {
           <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
         </ol>
         <div className="carousel-inner">
+        <div className="carousel-item active">
+            <img src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2021/10/13/e93499c5-270b-4151-9acd-11fbbf5cc6b11634139203927-Men---s-Top-Wear_Desk.jpg" className="d-block w-100" alt="..." />
+            <div className="carousel-caption d-none d-md-block">
+              <h5>First slide label</h5>
+              <p>Some representative placeholder content for the first slide.</p>
+            </div>
+          </div>
           <div className="carousel-item active">
             <img src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2021/10/13/e93499c5-270b-4151-9acd-11fbbf5cc6b11634139203927-Men---s-Top-Wear_Desk.jpg" className="d-block w-100" alt="..." />
             <div className="carousel-caption d-none d-md-block">
