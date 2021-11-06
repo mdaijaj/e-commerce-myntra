@@ -53,8 +53,13 @@ var product_schema=  new Schema({
         type: Number,
         default: 1
     },
-    review: [
+    reviews: [
         {
+            user: {
+                type: mongoose.Schema.ObjectId,
+                ref: "Product",
+                required: true,
+            },
             name:{
                 type: String,
                 required: true
@@ -63,12 +68,19 @@ var product_schema=  new Schema({
                 type: Number,
                 required: true
             },
-            commit:{
+            comment:{
                 type: String,
                 required: true
             },
         }
-    ]}, {
+    ],
+
+    user: {
+        type: mongoose.Schema.ObjectId,
+        ref: "User",
+        // required: true,
+    },
+}, {
     timestamps: true
 });
 
