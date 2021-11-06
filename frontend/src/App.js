@@ -16,7 +16,7 @@ import Login from './components/Login';
 const Routing =()=>{
   return (
     <>
-      <BrowserRouter>
+   
         <Switch>
         <Route exact path="/">
           <Home/>
@@ -50,7 +50,7 @@ const Routing =()=>{
           <Errorpage />
         </Route>
         </Switch>
-    </BrowserRouter>
+  
   </>
   )
 }

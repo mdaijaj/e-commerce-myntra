@@ -16,7 +16,6 @@ let router=require('./routes/index')
 app.use('/', router)
 
 
-
 const port=5000;
 app.listen(port, ()=>{
     console.log("api is working", port)
