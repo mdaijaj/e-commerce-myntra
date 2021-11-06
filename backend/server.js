@@ -11,9 +11,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 // app.use(express.static(__dirname)); 
 
-
 let router=require('./routes/index')
 app.use('/', router)
+
+// let orderRoutes=require('./routes/order_routes')
+// app.use('/', orderRoutes)
 
 
 const port=5000;

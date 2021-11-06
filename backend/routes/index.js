@@ -1,8 +1,10 @@
 const express= require('express');
 const product= require('../controllers/product_control')
 const user= require('../controllers/user_control')
+const order= require('../controllers/order_control')
 const {authenticate, authorizeRoles} =require('../middleware/auth')
-const router=express()
+const router=express();
+
 
 //product
 router.get('/getAllProduct', product.getAllProduct);
@@ -13,6 +15,7 @@ router.delete('/deleteData/:id', product.deleteData);
 router.put('/review', authenticate, product.createProductReview);
 router.get('/allReviews', product.allReviews)
 router.delete('/deleteReview', authenticate, product.deleteReview)
+
 
 //users
 router.get('/profile',authenticate, user.about)
@@ -26,6 +29,10 @@ router.put('/resetPassword/:token', user.resetPassword)
 router.put('/updatePassword', authenticate, user.updatePassword)
 router.put('/updateProfile', authenticate, user.updateProfile)
 router.delete('/deleteUser/:id', user.deleteUser);
+
+
+//orders
+router.post('/createOrder', order.newOrder);
 
 
 module.exports= router;
