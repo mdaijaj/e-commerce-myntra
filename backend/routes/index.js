@@ -6,7 +6,7 @@ const {authenticate, authorizeRoles} =require('../middleware/auth')
 const router=express();
 
 
-//product
+//product routes
 router.get('/getAllProduct', product.getAllProduct);
 router.get('/productInf/:_id', product.productInf)
 router.post('/createProduct', product.createProduct);
@@ -17,7 +17,7 @@ router.get('/allReviews', product.allReviews)
 router.delete('/deleteReview', authenticate, product.deleteReview)
 
 
-//users
+//users routes
 router.get('/profile',authenticate, user.about)
 router.get('/logout', user.loggedOut)
 router.get('/allUsers', authenticate, authorizeRoles("admin"), user.allUsers)
@@ -31,8 +31,13 @@ router.put('/updateProfile', authenticate, user.updateProfile)
 router.delete('/deleteUser/:id', user.deleteUser);
 
 
-//orders
-router.post('/createOrder', order.newOrder);
-
+//orders routes
+router.post('/createOrder', authenticate, order.newOrder);
+router.get('/singleOrder/:_id', authenticate, order.singleOrder)
+router.get('/myOrder',authenticate, order.myOrder)
+router.get('/allOrders', authenticate, order.allOrders)
+router.put('/orderUpdate/:_id', authenticate, order.orderUpdate)
+router.delete('/deleteOrder/:_id', authenticate, order.deleteOrder)
 
 module.exports= router;
+

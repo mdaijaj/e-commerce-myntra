@@ -44,13 +44,8 @@ const orderSchema=new Schema({
                 type: Number,
                 required: true
             },
-            MRP_Price: {
-                type: Number,
-                required: true
-            },
             image:{
-                type: String,
-                required: true
+                type: String
             },
             product:{
                 type: mongoose.Schema.ObjectId,
@@ -67,7 +62,7 @@ const orderSchema=new Schema({
     paymentInfo: {
         id: {
             type: String,
-            required: true,
+            required: true
         },
         status: {
             type: String,
@@ -103,7 +98,6 @@ const orderSchema=new Schema({
     createAt: {
         type: Date,
         default: Date.now,
-
     }
 });
 
