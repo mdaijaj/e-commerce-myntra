@@ -11,7 +11,8 @@ import Register from './components/Register';
 import Login from './components/Login';
 // import Logout from './components/Logout';
 // import Contact from './components/Contact';
-
+import CollectionPage from "./components/category/collection";
+import ProductDetails from './components/category/product_details';
 
 const Routing =()=>{
   return (
@@ -47,7 +48,7 @@ const Routing =()=>{
         </Route>
 
         <Route>
-          <Errorpage />
+          <ProductDetails />
         </Route>
         </Switch>
   
