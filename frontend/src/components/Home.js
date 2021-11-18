@@ -12,17 +12,19 @@ const Home = () => {
           <li data-target="#carouselExampleCaptions" data-slide-to="0" className="active"></li>
           <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
           <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
+
         </ol>
         <div className="carousel-inner">
         <div className="carousel-item active">
-            <img src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2021/10/13/e93499c5-270b-4151-9acd-11fbbf5cc6b11634139203927-Men---s-Top-Wear_Desk.jpg" className="d-block w-100" alt="..." />
+            <img src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2021/11/5/22579c45-4247-4a6a-8aa0-c307fed3e8c01636050638545-Weekend-sale_DK.jpg" className="d-block w-100" alt="..." />
             <div className="carousel-caption d-none d-md-block">
               <h5>First slide label</h5>
               <p>Some representative placeholder content for the first slide.</p>
             </div>
           </div>
           <div className="carousel-item active">
-            <img src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2021/10/13/e93499c5-270b-4151-9acd-11fbbf5cc6b11634139203927-Men---s-Top-Wear_Desk.jpg" className="d-block w-100" alt="..." />
+            <img src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2021/11/3/3e64386d-6b1c-45cc-aed8-32a5d0669cd91635955686435-W_Ethnic_Dk.jpg" className="d-block w-100" alt="..." />
             <div className="carousel-caption d-none d-md-block">
               <h5>First slide label</h5>
               <p>Some representative placeholder content for the first slide.</p>
@@ -36,14 +38,14 @@ const Home = () => {
             </div>
           </div>
           <div className="carousel-item">
-            <img src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2021/10/13/bb05efe0-e319-4acb-974d-9fe4d0abe8851634139203981-Work-Wear_Desk.jpg" className="d-block w-100" alt="..." />
+            <img src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2021/11/3/3e64386d-6b1c-45cc-aed8-32a5d0669cd91635955686435-W_Ethnic_Dk.jpg" className="d-block w-100" alt="..." />
             <div className="carousel-caption d-none d-md-block">
               <h5>Second slide label</h5>
               <p>Some representative placeholder content for the second slide.</p>
             </div>
           </div>
           <div className="carousel-item">
-            <img src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2021/10/13/4241804f-1b3d-4350-b879-a2c1901827951634139203960-Accessory_Desk.jpg" className="d-block w-100" alt="..." />
+            <img src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2021/11/3/5f3f4cdd-ffd2-4853-9767-d98a1455e9361635955686449-Footwear_Dk.jpg" className="d-block w-100" alt="..." />
             <div className="carousel-caption d-none d-md-block">
               <h5>Third slide label</h5>
               <p>Some representative placeholder content for the third slide.</p>

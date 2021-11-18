@@ -1,6 +1,4 @@
 const Product = require("../models/product_schema");
-const Bcrypt=require('bcryptjs');
-const jwt=require('jsonwebtoken');
 
 //add product
 const createProduct= async(req, res)=>{

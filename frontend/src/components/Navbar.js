@@ -7,14 +7,13 @@ import "../App.css"  //22
 const Navbar = () => {
     return (
         <>
-        
             {/* <nav className="navbar navbar-expand-lg navbar-light navbar topnavbar"> */}
             <nav className="aijaj navbar navbar-expand-lg navbar-light">
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-                    <a className="navbar-brand" to="#"> <img src="https://www.thenewsminute.com/sites/default/files/Myntra_Logo_1200x800.jpg" width="50px" height="50px"/></a>
+                    <NavLink className="icon-holder" to="/"> <img src="https://www.thenewsminute.com/sites/default/files/Myntra_Logo_1200x800.jpg" width="50px" height="50px"/></NavLink>
                     <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
 
                         <li className="nav-item active">
@@ -96,7 +95,6 @@ const Navbar = () => {
                     </div>
                 </div>
             </nav>
-
         </>
     )
 }

@@ -1,6 +1,4 @@
 const mongoose= require('../database/db');
-const Bcrypt=require('bcryptjs');
-const jwt=require('jsonwebtoken');
 const Schema = mongoose.Schema;
 
 var product_schema=  new Schema({
@@ -33,9 +31,9 @@ var product_schema=  new Schema({
         default:1
     },
     category: {
-        type: String,
+        type: mongoose.Schema.ObjectId,
+        ref: "Category",
         required: [true, "please enter your category"],
-        default: Date.now
     },
     images: [
         {

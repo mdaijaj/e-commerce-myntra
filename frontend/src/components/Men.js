@@ -15,7 +15,7 @@ const Men = () => {
         </ol>
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <img src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2021/10/13/e93499c5-270b-4151-9acd-11fbbf5cc6b11634139203927-Men---s-Top-Wear_Desk.jpg" className="d-block w-100" alt="..." />
+            <img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2021/11/15/45e4a12b-7249-41cf-82c3-9a14a52557581636989757162-Innerwear_Dk.jpg" className="d-block w-100" alt="..." />
             <div className="carousel-caption d-none d-md-block">
               <h5>First slide label</h5>
               <p>Some representative placeholder content for the first slide.</p>
@@ -50,9 +50,9 @@ const Men = () => {
 
 
       {/* using card */}
-      <div class="row row-cols-2 row-cols-md-5" style={{width: "75rem"}}>
+      <div class="row row-cols-2 row-cols-md-5" style={{width: "110rem", marginLeft: "20px"} }>
         <div class="col mb-2">
-          <div class="card h-50">
+          <div class="card h-40">
             <img src="https://assets.myntassets.com/w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2020/8/31/7c28bc7a-0184-44b2-8666-ea1438d595561598892377316-J_J.jpg" class="card-img-top" alt="..." />
             <div class ="card-body">
             </div>
