@@ -13,6 +13,7 @@ import Login from './components/Login';
 // import Contact from './components/Contact';
 import CollectionPage from "./components/category/collection";
 import ProductDetails from './components/category/product_details';
+import Product_add from './components/category/product_add';
 
 const Routing =()=>{
   return (
@@ -48,7 +49,7 @@ const Routing =()=>{
         </Route>
 
         <Route>
-          <ProductDetails />
+          <Product_add />
         </Route>
         </Switch>
   
