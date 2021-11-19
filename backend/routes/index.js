@@ -2,6 +2,7 @@ const express= require('express');
 const product= require('../controllers/product_control')
 const user= require('../controllers/user_control')
 const order= require('../controllers/order_control')
+const collection= require('../controllers/collections')
 const {authenticate, authorizeRoles} =require('../middleware/auth')
 const router=express();
 
@@ -38,6 +39,11 @@ router.get('/myOrder',authenticate, order.myOrder)
 router.get('/allOrders', authenticate, order.allOrders)
 router.put('/orderUpdate/:_id', authenticate, order.orderUpdate)
 router.delete('/deleteOrder/:_id', authenticate, order.deleteOrder)
+
+
+//collections
+router.post('/create_category', collection.category)
+router.get('/all_shirts/:id', collection.shirts)
 
 module.exports= router;
 

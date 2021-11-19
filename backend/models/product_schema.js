@@ -30,10 +30,11 @@ var product_schema=  new Schema({
         required: [true, "please enter your stock"],
         default:1
     },
-    category: {
+    category_id: {
         type: mongoose.Schema.ObjectId,
-        ref: "Category",
-        required: [true, "please enter your category"],
+        ref: "Category_model",
+        required: [false, "please enter your category"],
+        strictPopulate: false
     },
     images: [
         {
