@@ -14,6 +14,7 @@ import Login from './components/Login';
 import CollectionPage from "./components/category/collection";
 import ProductDetails from './components/category/product_details';
 import Product_add from './components/category/product_add';
+import OtpPage from './components/category/otp_page';
 
 const Routing =()=>{
   return (
@@ -48,8 +49,16 @@ const Routing =()=>{
           <Login/>
         </Route>
 
+        <Route path="/OtpPage">
+          <OtpPage/>
+        </Route>
+
+        <Route path="/category/collection.js">
+          <CollectionPage/>
+        </Route>
+
         <Route>
-          <Product_add />
+          <OtpPage />
         </Route>
         </Switch>
   

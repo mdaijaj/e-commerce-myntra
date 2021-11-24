@@ -28,3 +28,10 @@
 .form{
     padding: 20px;
 }
+
+.columns{
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+
+}

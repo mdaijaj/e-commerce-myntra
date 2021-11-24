@@ -1,8 +1,23 @@
-import react from "react";
+import React, { useState, useEffect } from 'react';
 import './style.css'
-const  CollectionPage= () => {
 
-    
+
+const  CollectionPage= () => {
+  const [collect, setCollect] = useState([])
+
+  const getCollection=async()=>{
+    const response= await fetch('/getAllProduct')
+    const allData= await response.json();
+    console.log("allData", allData)
+    // const data=allData.data
+    setCollect([...allData])
+  }
+  useEffect(()=>{
+    getCollection()
+  }, [])
+  const dataList=collect.filter((item)=> (item.collections==="t-shirt"))
+  console.log("dataList", dataList)
+
   return (
     <>
     <h2>Shirts collectios page</h2>
@@ -61,18 +76,28 @@ const  CollectionPage= () => {
           <h6>COLOR</h6>
           <h6>DISCOUNT RANGE</h6>
         </div>
-      <div class="col-xs-6 col-md-10">
-      <div class="row row-cols-2 row-cols-md-4" style={{width: "75rem"}}>
-        <div class="col mb-2">
-          <div class="card h-30">
-            <img src="https://assets.myntassets.com/w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2020/8/31/7c28bc7a-0184-44b2-8666-ea1438d595561598892377316-J_J.jpg" class="card-img-top" alt="..." />
-            <div class ="card-body">
-            <h5 class ="card-title">Roadster hover</h5>
-            <p class ="card-text">2020</p>
+
+      {/* <div class="col-xs-6 col-md-10">
+      <div class="row row-cols-2 row-cols-md-4" style={{width: "75rem"}}> */}
+      <ul>
+        {dataList.map((data)=>{
+          return(
+            <div class="row">
+              <div class="column">
+                <div class="card">
+                  <img src="https://assets.myntassets.com/w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2020/8/31/7c28bc7a-0184-44b2-8666-ea1438d595561598892377316-J_J.jpg"  alt="..." />
+                  <div class ="card-body">
+                    <h5 class ="card-title">Roadster hover</h5>
+                    <p class ="card-text">2020</p>
+                  </div>
+                  </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="col mb-2">
+          )
+        })}
+      </ul>
+        
+        {/* <div class="col mb-2">
           <div class="card h-30">
             <img src="https://assets.myntassets.com/w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2020/8/31/cec595c6-c7ec-4259-af8b-997a33a09ce71598892377444-Puma.jpg" class="card-img-top" alt="..." />
             <div class ="card-body">
@@ -126,10 +151,10 @@ const  CollectionPage= () => {
             <p class ="card-text">longer</p>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
-      </div>
-    </div>
+      {/* </div>
+    </div> */}
     
   </>
   );

@@ -6,7 +6,7 @@ const sendEmail=require('../utils/sendEmail')
 const crypto= require('crypto')
 
 //register user
-const register= async(req, res)=>{
+const registered= async(req, res)=>{
     try{
         const {
             name,
@@ -15,7 +15,7 @@ const register= async(req, res)=>{
             password,
         }= req.body;
 
-        const userExits= await User.findOne({email: email})
+        const userExits= await User.findOne({phone: phone})
         console.log("userExits",userExits )
         if(userExits){
             res.send("email is already exits in your db...")
@@ -32,6 +32,42 @@ const register= async(req, res)=>{
         res.send(err.message)
     }   
 }
+
+//register
+const register= async(req, res)=>{
+    try{
+        const {email}= req.body;
+        console.log("email", email)
+        const userExits= await User.findOne({email: email})
+        console.log("userExits",userExits )
+            await sendEmail({
+                email: user.email,
+                subject: `E-commerce Reset Password..!`,
+                message: message,
+            })
+            res.status(200).send({
+                success: true, 
+                message:  `Email sent to ${user.email} Successfully!`
+            })
+       
+        if(userExits){
+            res.send("email is already exits in your db...")
+        }else{
+            const userData= await User.create(req.body)
+            sendToken(userData, 201, res)
+            const token=await userData.generateAuthToken()
+            console.log("token", token)
+            return res.status(200).send({message:"user resitered save data", token: token, data: userData})
+        }
+    }
+    catch(err){
+        console.log(err.message)
+        res.send(err.message)
+    }   
+}
+
+
+
 
 //login user
 const login= async (req,res)=>{
@@ -220,7 +256,8 @@ module.exports= {
     updateProfile,
     allUsers,
     singleUser,
-    deleteUser
+    deleteUser,
+    registered
 }
 
  

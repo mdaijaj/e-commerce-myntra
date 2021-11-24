@@ -43,7 +43,8 @@ router.delete('/deleteOrder/:_id', authenticate, order.deleteOrder)
 
 //collections
 router.post('/create_category', collection.category)
-router.get('/all_shirts/:id', collection.shirts)
+router.get('/all_shirts/:collections', collection.shirts)
+router.get('/all_categories', collection.allCategory)
 
 module.exports= router;
 

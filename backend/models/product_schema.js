@@ -30,12 +30,6 @@ var product_schema=  new Schema({
         required: [true, "please enter your stock"],
         default:1
     },
-    category_id: {
-        type: mongoose.Schema.ObjectId,
-        ref: "Category_model",
-        required: [false, "please enter your category"],
-        strictPopulate: false
-    },
     images: [
         {
             public_id: {
@@ -73,6 +67,11 @@ var product_schema=  new Schema({
             },
         }
     ],
+    category_id: {
+        type: mongoose.Schema.ObjectId,
+        ref: "Category_model",
+        // required: [false, "please enter your category"],
+    },
 
     user: {
         type: mongoose.Schema.ObjectId,

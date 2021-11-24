@@ -8,23 +8,24 @@ const Schema = mongoose.Schema;
 var user_schema=  new Schema({
     name: {
         type: String,
-        required: [true, "please enter your name"],
+        // required: [true, "please enter your name"],
         maxlength: [30, "Name cannot exceed 30 charactor"],
         min: [4, "name should be more than 4 charactor"]
      },
      email: {
          type: String,
-         required: [true, "please enter your email"],
+        //  required: [true, "please enter your email"],
          unique: true,
          validate: [validator.isEmail, "please enter valid email id"]
      },
      phone: {
          type: Number,
-         required: true
+         unique: true
+        //  required: true
      },
      password: {
       type: String,
-      required: [true, "please enter your email"],
+    //   required: [true, "please enter your email"],
     //   select: false
     },
     profile: {
@@ -77,7 +78,6 @@ user_schema.methods.getResetPasswordToken=async function(){
     // const resetToken= crypto.randomBytes(60).toString("hex");
     // const resetToken=crypto.lib.WordArray.random(32)
     // console.log("resetToken", resetToken)
-
     // this.resetPasswordToken=crypto.createHash("sha2560").update(resetToken).digest("hex")
     const resetToken=Math.floor(Math.random() * 1000000000);
     console.log("resetToken", resetToken)
