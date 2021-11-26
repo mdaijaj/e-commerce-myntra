@@ -1,6 +1,6 @@
 import react from "react";
 import './regis.css'
-import React,{ useState } from "react";
+import React,{ useState, useEffect } from "react";
 import axios from 'axios'
 import {useHistory, NavLink} from 'react-router-dom'
 
@@ -11,32 +11,45 @@ const Register = () => {
     email: "",
     phone: ""
   });
-  let name, value;
+
+
   const handleInput=(e)=>{
-    const newData= {...regis}
-    newData[e.target.name]= e.target.value
-    setRegis(newData)
-    console.log(newData)
+    setRegis({...regis,[e.target.name]:e.target.value})
   }
 
   const addRegister=async(e)=>{
     console.log("api is working...")
       e.preventDefault()
-      const {email, phone}= regis;
+      // console.log("regis", regis)
+      const {email, phone}= regis; 
       const config={
         method: "Post",
-        "Content-Type": "application/Json",
-        body:JSON.stringify({email: regis.email,  phone: regis.phone})
+        "Content-Type": "application/json",
+        body:JSON.stringify({email: email, phone: phone})
       }
-      const res= await fetch('/register', config)
-      console.log("res", res)
+      // const res= await fetch('/register', config)
+      // console.log("res", res)
+      // fetch('/register', config)
+      // .then(response => response.json())
+      // .then(data => {
+      //   console.log(data)
+      // }).catch((err)=>{console.log(err.message)})
+      
       if(!res.status===200 ||!res){
         window.alert("Invalid Registration");
-      }else{
+      }
+      if(!email || !phone){
+        window.alert("Please fill input form")
+      }
+      else{
         window.alert("Story add is successfully!")
         history.push('/OtpPage')
       }
   }
+
+  useEffect(()=>{
+    // console.log(regis,"regis")
+  }, [regis])
 
   return (
     <>
@@ -49,10 +62,10 @@ const Register = () => {
         <h5><strong>Signup</strong> or <strong>Login</strong></h5>
 
         <label>Phone No.
-          <input type="number" className="form-control w-60" onChange={(e)=>(handleInput)} id="number" name="number" placeholder=" Enter number..." />
+          <input type="number" className="form-control w-60" onChange={(e)=>handleInput(e)} id="phone" name="phone" placeholder=" Enter number..." />
         </label>
         <label className="label"> Email
-          <input type="email" className="form-control w-60" onChange={(e)=>(handleInput)} id="email" name="email" placeholder=" Enter email..." />
+          <input type="email" className="form-control w-60" onChange={(e)=>handleInput(e)} id="email" name="email" placeholder=" Enter email..." />
           <br/>
           <p>By continueing, I agree to the <p2>Term of Use</p2> &  <p2>Privacy Policy</p2></p>
         </label>

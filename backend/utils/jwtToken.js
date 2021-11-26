@@ -10,11 +10,11 @@ const sendToken= async(userData,statusCode,res)=>{
         expires: new Date(Date.now() + 5*24*60*60*1000),
         httpOnly: true,
     }
-    res.status(statusCode).cookie("token", token, options).send({
-        success: true,
-        userData,
-        token
-    });
+    // res.status(statusCode).cookie("token", token, options).send({
+    //     success: true,
+    //     userData,
+    //     token
+    // });
 }
 
 module.exports= sendToken;

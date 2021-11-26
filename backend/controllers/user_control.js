@@ -36,28 +36,28 @@ const registered= async(req, res)=>{
 //register
 const register= async(req, res)=>{
     try{
-        const {email}= req.body;
-        console.log("email", email)
+        const {email, phone}= req.body;
+        console.log("email", req.body)
         const userExits= await User.findOne({email: email})
         console.log("userExits",userExits )
-            await sendEmail({
-                email: user.email,
-                subject: `E-commerce Reset Password..!`,
-                message: message,
-            })
-            res.status(200).send({
-                success: true, 
-                message:  `Email sent to ${user.email} Successfully!`
-            })
-       
         if(userExits){
             res.send("email is already exits in your db...")
         }else{
+            const otp=Math.floor(Math.random() * 9999);
             const userData= await User.create(req.body)
+            console.log(userData, "kingnnnn")
             sendToken(userData, 201, res)
             const token=await userData.generateAuthToken()
             console.log("token", token)
-            return res.status(200).send({message:"user resitered save data", token: token, data: userData})
+            // await sendEmail({
+            //     email: email,
+            //     subject: `E-commerce Reset Password..!`,
+            //     message: "how are you",
+            //     token: token,
+            //     otp: otp
+            // })
+            console.log({message:"user resitered save data", token: token, data: userData})
+            return res.send({message:"user resitered save data", token: token, data: userData})
         }
     }
     catch(err){
@@ -136,10 +136,10 @@ const forgetPassword= async (req, res, next)=>{
             subject: `E-commerce Reset Password..!`,
             message: message,
         })
-        res.status(200).send({
-            success: true, 
-            message:  `Email sent to ${user.email} Successfully!`
-        })
+        //     res.status(200).send({
+        //     success: true, 
+        //     message:  `Email sent to ${user.email} Successfully!`
+        // })
     }
     catch(err){
         user.resetPasswordToken= undefined;
