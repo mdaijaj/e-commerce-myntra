@@ -3,7 +3,7 @@ const Category= require('../models/category_schema');
 
 
 //create category
-const category= async(req,res)=>{
+const createCategory= async(req,res)=>{
     try{
         console.log("api is working...")
         const product_data= await Category.create(req.body)
@@ -14,7 +14,7 @@ const category= async(req,res)=>{
     }
 }
 
-const allCategory= async (req,res)=>{
+const allCategories= async (req,res)=>{
     try{
         console.log("api is running bro..")
         const allData= await Category.find({});
@@ -28,12 +28,11 @@ const allCategory= async (req,res)=>{
 }
 
 //all shirts   we have to use populate here???
-const shirts= async(req,res)=>{
+const category= async(req,res)=>{
     try{
         console.log(req.params.collections)
-        const all_shirts=await Product.findOne({collections: req.params.collections})
-    
-        
+        const all_shirts=await Category.findById({_id: req.params._id})
+        .populate({path: "p_id", model: "Product"})        
         console.log("all_shirts", all_shirts)
         return res.status(200).send({message: "show data", result: all_shirts})
     }
@@ -43,11 +42,8 @@ const shirts= async(req,res)=>{
     }
 }
 
-
-
-
 module.exports={
-    shirts,
-    category ,
-    allCategory
+    category,
+    createCategory ,
+    allCategories
 }

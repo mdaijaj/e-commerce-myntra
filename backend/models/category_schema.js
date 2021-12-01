@@ -7,10 +7,10 @@ const categorySchema=new Schema({
         required: true,
         unique: true
     },
-    p_id:[ {
+    p_id: {
         type: mongoose.Schema.ObjectId,
         ref: "Product"
-    }],
+    },
     createAt: {
         type: Date,
         default: Date.now,

@@ -19,7 +19,6 @@ import OtpPage from './components/category/otp_page';
 const Routing =()=>{
   return (
     <>
-   
         <Switch>
         <Route exact path="/">
           <Home/>
@@ -57,11 +56,10 @@ const Routing =()=>{
           <CollectionPage/>
         </Route>
 
-        <Route>
-          <OtpPage />
-        </Route>
+        <Route path="/product/:id" component={ProductDetails}/>
+          {/* <ProductDetails ProductDetails={}/> */}
+        {/* </Route> */}
         </Switch>
-  
   </>
   )
 }

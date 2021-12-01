@@ -17,6 +17,7 @@
     background-color: lightgrey;
     padding: 10px;
     border: 2px solid black;
+
 }
 .h6{
     width: 200px;
@@ -31,7 +32,28 @@
 
 .columns{
     float: left;
-    width: 25%;
-    padding: 0 10px;
-
 }
+.rows{
+    float: left;
+}
+
+.cards{
+    width: 200px;
+    float: left;
+    height: 100px;
+    /* padding: 10px; */
+    margin-bottom:35%;
+}
+
+.cards img{
+    height:310px;
+    width:235px;
+    padding: 25px;
+    align-content: space-between;
+}
+
+.cards div p{
+    /* font-size: 0px; */
+    text-align: center;
+    white-space: pre-wrap;
+} 

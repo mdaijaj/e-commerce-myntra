@@ -46,38 +46,38 @@ var product_schema=  new Schema({
         type: Number,
         default: 1
     },
-    reviews: [
-        {
-            user: {
-                type: mongoose.Schema.ObjectId,
-                ref: "Product",
-                required: true,
-            },
-            name:{
-                type: String,
-                required: true
-            },
-            rating:{
-                type: Number,
-                required: true
-            },
-            comment:{
-                type: String,
-                required: true
-            },
-        }
-    ],
-    category_id: {
-        type: mongoose.Schema.ObjectId,
-        ref: "Category_model",
-        // required: [false, "please enter your category"],
-    },
+    // p_id: {
+    //     type:mongoose.Schema.ObjectId,
+    //     ref: "Category_model",
+    //     required: true,
+    // },
+    // reviews: [
+    //     {
+    //         user: {
+    //             type: mongoose.Schema.ObjectId,
+    //             ref: "Product",
+    //             required: true,
+    //         },
+    //         name:{
+    //             type: String,
+    //             required: true
+    //         },
+    //         rating:{
+    //             type: Number,
+    //             required: true
+    //         },
+    //         comment:{
+    //             type: String,
+    //             required: true
+    //         },
+    //     }
+    // ],
 
-    user: {
-        type: mongoose.Schema.ObjectId,
-        ref: "User",
-        // required: true,
-    },
+    // user: {
+    //     type: mongoose.Schema.ObjectId,
+    //     ref: "User",
+    //     // required: true,
+    // },
 }, {
     timestamps: true
 });

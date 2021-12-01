@@ -23,6 +23,7 @@ const Register = () => {
     console.log("api is working...")
       e.preventDefault()
       const {email, phone}= regis;
+      console.log(email, phone)
       const config={
         method: "Post",
         "Content-Type": "application/Json",

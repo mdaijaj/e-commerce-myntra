@@ -42,9 +42,9 @@ router.delete('/deleteOrder/:_id', authenticate, order.deleteOrder)
 
 
 //collections
-router.post('/create_category', collection.category)
-router.get('/all_shirts/:collections', collection.shirts)
-router.get('/all_categories', collection.allCategory)
+router.post('/createCategory', collection.createCategory)
+router.get('/category/:_id', collection.category)
+router.get('/allCategories', collection.allCategories)
 
 module.exports= router;
 

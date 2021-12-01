@@ -4,6 +4,10 @@ import react from "react";
 
 
 const OtpPage = () => {
+  
+  const otpVerify=(e)=>{
+    console.log("api is working...")
+  }
 
     return (
       <>
@@ -19,10 +23,11 @@ const OtpPage = () => {
             <br/>
             <p>check your phone <p2>Term of Use</p2> &  <p2>Privacy Policy</p2></p>
           </label>
-          <button type="button" className="btn btn-primary btn-lg btn-block"  >Continue</button>
+          <button type="button" className="btn btn-primary btn-lg btn-block" onClick={otpVerify}  >Continue</button>
         </div>
       </>
     );
-  }
+}
+  
   
   export default OtpPage;

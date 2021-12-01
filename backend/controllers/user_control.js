@@ -36,10 +36,14 @@ const registered= async(req, res)=>{
 //register
 const register= async(req, res)=>{
     try{
-        const {email}= req.body;
-        console.log("email", email)
-        const userExits= await User.findOne({email: email})
+        const {email, phone}= req.body;
+        console.log("email", req.body)
+        const userExits= await User.findOne({email: email}).exec()
         console.log("userExits",userExits )
+        if(userExits){
+            res.send("email is already exits in your db...")
+        }else{
+            console.log("mail sent processing...")
             await sendEmail({
                 email: user.email,
                 subject: `E-commerce Reset Password..!`,
@@ -50,14 +54,11 @@ const register= async(req, res)=>{
                 message:  `Email sent to ${user.email} Successfully!`
             })
        
-        if(userExits){
-            res.send("email is already exits in your db...")
-        }else{
-            const userData= await User.create(req.body)
-            sendToken(userData, 201, res)
-            const token=await userData.generateAuthToken()
-            console.log("token", token)
-            return res.status(200).send({message:"user resitered save data", token: token, data: userData})
+            // const userData= await User.create(req.body)
+            // sendToken(userData, 201, res)
+            // const token=await userData.generateAuthToken()
+            // console.log("token", token)
+            // return res.status(200).send({message:"user resitered save data", token: token, data: userData})
         }
     }
     catch(err){
