@@ -20,25 +20,20 @@ const Register = () => {
   const addRegister=async(e)=>{
     console.log("api is working...")
       e.preventDefault()
-<<<<<<< HEAD
-      const {email, phone}= regis;
-      console.log(email, phone)
-=======
       // console.log("regis", regis)
       const {email, phone}= regis; 
->>>>>>> 1228b804ddd522ebfc015e37b2e2f8ee3c44d2b8
       const config={
         method: "Post",
         "Content-Type": "application/json",
         body:JSON.stringify({email: email, phone: phone})
       }
-      // const res= await fetch('/register', config)
-      // console.log("res", res)
-      // fetch('/register', config)
-      // .then(response => response.json())
-      // .then(data => {
-      //   console.log(data)
-      // }).catch((err)=>{console.log(err.message)})
+      const res= await fetch('/register', config)
+      console.log("res", res)
+      fetch('/register', config)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+      }).catch((err)=>{console.log(err.message)})
       
       if(!res.status===200 ||!res){
         window.alert("Invalid Registration");

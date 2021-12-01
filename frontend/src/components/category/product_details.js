@@ -73,7 +73,7 @@ const ProductDetails = ({match}) => {
             </div>{" "}
             <br />
             <br />
-            <button type="button"  className="btn btn-secondary btn-lg">
+            <button type="button" onClick={addToCard} className="btn btn-secondary btn-lg">
               BAG
             </button>
             <button type="button" className="btn btn-lg btn-primary">
