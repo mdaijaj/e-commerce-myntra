@@ -13,6 +13,7 @@ import Login from './components/Login';
 // import Contact from './components/Contact';
 import CollectionPage from "./components/category/collection";
 import ProductDetails from './components/category/product_details';
+import CartDetails from './components/category/bag'
 import Product_add from './components/category/product_add';
 import OtpPage from './components/category/otp_page';
 
@@ -22,7 +23,7 @@ const Routing =()=>{
         <Switch>
         <Route exact path="/">
           <Home/>
-        </Route>
+        </Route> 
 
         <Route path="/men">
           <Men/>
@@ -57,8 +58,7 @@ const Routing =()=>{
         </Route>
 
         <Route path="/product/:id" component={ProductDetails}/>
-          {/* <ProductDetails ProductDetails={}/> */}
-        {/* </Route> */}
+        <Route path="/cart/:id?" component={CartDetails}/>
         </Switch>
   </>
   )

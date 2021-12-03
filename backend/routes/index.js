@@ -3,6 +3,7 @@ const product= require('../controllers/product_control')
 const user= require('../controllers/user_control')
 const order= require('../controllers/order_control')
 const collection= require('../controllers/collections')
+const cart= require('../controllers/cart_control');
 const {authenticate, authorizeRoles} =require('../middleware/auth')
 const router=express();
 
@@ -45,6 +46,11 @@ router.delete('/deleteOrder/:_id', authenticate, order.deleteOrder)
 router.post('/createCategory', collection.createCategory)
 router.get('/category/:_id', collection.category)
 router.get('/allCategories', collection.allCategories)
+
+
+//cart routes
+router.post('/insertToCart', authenticate, cart.insertToCart)
+router.post('/insertToWish', authenticate, cart.insertToWish)
 
 module.exports= router;
 
