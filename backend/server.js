@@ -5,8 +5,9 @@ const cookieParser= require('cookie-parser')
 const connectedb=require('./database/db')
 const app = express()
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
+
 app.use(cors());
 app.use(cookieParser());
 app.use(express.static(__dirname)); 

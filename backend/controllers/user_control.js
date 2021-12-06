@@ -15,7 +15,7 @@ const registered= async(req, res)=>{
             password,
         }= req.body;
 
-        const userExits= await User.findOne({phone: phone})
+        const userExits= await User.find({email:email})
         console.log("userExits",userExits )
         if(userExits){
             res.send("email is already exits in your db...")
@@ -37,28 +37,31 @@ const registered= async(req, res)=>{
 const register= async(req, res)=>{
     try{
         const {email, phone}= req.body;
-        console.log("email", req.body)
-        const userExits= await User.findOne({email: email})
-        console.log("userExits",userExits )
+        console.log("req.body", email, phone)
+        const otp=Math.floor(Math.random() * 9999);
+        const userExits= await User.findOne({email: email}).exec()
         if(userExits){
-            res.send("email is already exits in your db...")
+            console.log("userExits",userExits )
+            return res.send("email is already exits in your db...")
         }else{
-            const otp=Math.floor(Math.random() * 9999);
-            const userData= await User.create(req.body)
-            console.log(userData, "kingnnnn")
-            sendToken(userData, 201, res)
+            const userData= await new User({email,phone});
+            console.log(userData, "king")
             const token=await userData.generateAuthToken()
             console.log("token", token)
-            // await sendEmail({
-            //     email: email,
-            //     subject: `E-commerce Reset Password..!`,
-            //     message: "how are you",
-            //     token: token,
-            //     otp: otp
-            // })
+            sendToken(userData, 201, res)
+            
+            await userData.save();
+             await sendEmail({
+                email: email,
+                subject: `E-commerce Reset Password..!`,
+                message: "how are you", 
+                token: token,
+                otp: otp
+        })
+
             console.log({message:"user resitered save data", token: token, data: userData})
             return res.send({message:"user resitered save data", token: token, data: userData})
-        }
+        }    
     }
     catch(err){
         console.log(err.message)

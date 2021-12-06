@@ -7,49 +7,50 @@ import {useHistory, NavLink} from 'react-router-dom'
 
 const Register = () => {
   const history=useHistory();
-  const [regis, setRegis]= useState({
+  const [user, setUser]= useState({
     email: "",
     phone: ""
   });
 
 
   const handleInput=(e)=>{
-    setRegis({...regis,[e.target.name]:e.target.value})
+    const {name, value}=e.target
+    setUser({...user,[name]:value})
   }
 
-  const addRegister=async(e)=>{
-    console.log("api is working...")
-      e.preventDefault()
-      // console.log("regis", regis)
-      const {email, phone}= regis; 
-      const config={
-        method: "Post",
-        "Content-Type": "application/json",
-        body:JSON.stringify({email: email, phone: phone})
-      }
-      const res= await fetch('/register', config)
-      console.log("res", res)
-      fetch('/register', config)
-      .then(response => response.json())
-      .then(data => {
-        console.log(data)
-      }).catch((err)=>{console.log(err.message)})
-      
-      if(!res.status===200 ||!res){
-        window.alert("Invalid Registration");
-      }
+  const addRegister=async()=>{
+    try{
+      const {email, phone}= user; 
+      console.log("aijajkhkan",email, phone)
       if(!email || !phone){
         window.alert("Please fill input form")
       }
       else{
-        window.alert("Story add is successfully!")
-        history.push('/OtpPage')
-      }
+          const api=await axios.post('/register', user)
+          console.log("api", api)
+          // const res= await fetch('/register', config)
+          // console.log("res--", res)
+          // fetch('/register', config)
+          // .then(response => response.json())
+          // .then(data => {
+          //   console.log("data", data)
+          // }).catch((err)=>{console.log(err.message)})
+          
+          // if(!res.status===200 ||!res){
+          //   window.alert("Invalid Registration");
+          // }
+          window.alert("register successfully!")
+          history.push('/OtpPage')
+        }
+    }
+    catch(err){
+      console.log(err.message)
+    }
   }
 
   useEffect(()=>{
-    // console.log(regis,"regis")
-  }, [regis])
+    // addRegister()
+  }, [user])
 
   return (
     <>
@@ -62,14 +63,14 @@ const Register = () => {
         <h5><strong>Signup</strong> or <strong>Login</strong></h5>
 
         <label>Phone No.
-          <input type="number" className="form-control w-60" onChange={(e)=>handleInput(e)} id="phone" name="phone" placeholder=" Enter number..." />
+          <input type="number" className="form-control w-60" onChange={(e)=>handleInput(e)} id="phone" name="phone" value={user.phone} placeholder=" Enter number..." />
         </label>
         <label className="label"> Email
-          <input type="email" className="form-control w-60" onChange={(e)=>handleInput(e)} id="email" name="email" placeholder=" Enter email..." />
+          <input type="email" className="form-control w-60" onChange={(e)=>handleInput(e)} id="email" name="email" value={user.email} placeholder=" Enter email..." />
           <br/>
           <p>By continueing, I agree to the <p2>Term of Use</p2> &  <p2>Privacy Policy</p2></p>
         </label>
-        <button type="button" className="btn btn-primary btn-lg btn-block" onClick={addRegister} >Send</button>
+        <button type="button" className="btn btn-primary btn-lg btn-block" onClick={()=>addRegister({})} >Send</button>
       </div>
     </>
   );

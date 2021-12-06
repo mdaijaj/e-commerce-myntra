@@ -4,8 +4,11 @@ const user= require('../controllers/user_control')
 const order= require('../controllers/order_control')
 const collection= require('../controllers/collections')
 const cart= require('../controllers/cart_control');
-const {authenticate, authorizeRoles} =require('../middleware/auth')
+const {authenticate, authorizeRoles} =require('../middleware/auth');
+const bodyParser = require('body-parser');
 const router=express();
+
+
 
 
 //product routes
