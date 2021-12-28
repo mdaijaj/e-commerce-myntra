@@ -41,13 +41,13 @@ const Women = () => {
             </div>
           </div>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
+        <a className="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span className="sr-only">Previous</span>
         </a>
-        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
+        <a className="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+          <span className="carousel-control-next-icon" aria-hidden="true"></span>
+          <span className="sr-only">Next</span>
         </a>
       </div>
       <br/>
@@ -55,92 +55,92 @@ const Women = () => {
 
 
       {/* using card */}
-      <div class="row row-cols-2 row-cols-md-5" style={{width: "75rem"}}>
-        <div class="col mb-2">
-          <div class="card h-50">
-            <img src="https://assets.myntassets.com/w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2020/8/31/7c28bc7a-0184-44b2-8666-ea1438d595561598892377316-J_J.jpg" class="card-img-top" alt="..." />
-            <div class ="card-body">
+      <div className="row row-cols-2 row-cols-md-5" style={{width: "75rem"}}>
+        <div className="col mb-2">
+          <div className="card h-50">
+            <img src="https://assets.myntassets.com/w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2020/8/31/7c28bc7a-0184-44b2-8666-ea1438d595561598892377316-J_J.jpg" className="card-img-top" alt="..." />
+            <div className ="card-body">
             </div>
           </div>
         </div>
-        <div class="col mb-4">
-          <div class="card h-100">
-            <img src="https://assets.myntassets.com/w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2020/8/31/cec595c6-c7ec-4259-af8b-997a33a09ce71598892377444-Puma.jpg" class="card-img-top" alt="..." />
-            <div class ="card-body">
-            {/* <h5 class ="card-title">Card title</h5>
-            <p class ="card-text">This is a short card.</p> */}
+        <div className="col mb-4">
+          <div className="card h-100">
+            <img src="https://assets.myntassets.com/w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2020/8/31/cec595c6-c7ec-4259-af8b-997a33a09ce71598892377444-Puma.jpg" className="card-img-top" alt="..." />
+            <div className ="card-body">
+            {/* <h5 className ="card-title">Card title</h5>
+            <p className ="card-text">This is a short card.</p> */}
             </div>
           </div>
         </div>
-        <div class="col mb-4">
-          <div class="card h-100">
-            <img src="https://assets.myntassets.com/w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2020/8/31/0206da63-a7cc-4f83-8527-90d7dc74706b1598892377489-Skechers.jpg" class="card-img-top" alt="..." />
-            <div class ="card-body">
-            {/* <h5 class ="card-title">Card title</h5>
-            <p class ="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p> */}
+        <div className="col mb-4">
+          <div className="card h-100">
+            <img src="https://assets.myntassets.com/w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2020/8/31/0206da63-a7cc-4f83-8527-90d7dc74706b1598892377489-Skechers.jpg" className="card-img-top" alt="..." />
+            <div className ="card-body">
+            {/* <h5 className ="card-title">Card title</h5>
+            <p className ="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p> */}
             </div>
           </div>
         </div>
-        <div class="col mb-4">
-          <div class="card h-100">
-            <img src="https://assets.myntassets.com/fl_progressive/h_960,q_80,w_720/v1/assets/images/14983728/2021/7/30/e43ab6d1-38f3-4e21-a43c-7fae5947490f1627641517125na1.jpg" class="card-img-top" alt="..." />
-            <div class ="card-body">
-            {/* <h5 class ="card-title">Card title</h5>
-            <p class ="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.This content is a little bit longer.</p> */}
+        <div className="col mb-4">
+          <div className="card h-100">
+            <img src="https://assets.myntassets.com/fl_progressive/h_960,q_80,w_720/v1/assets/images/14983728/2021/7/30/e43ab6d1-38f3-4e21-a43c-7fae5947490f1627641517125na1.jpg" className="card-img-top" alt="..." />
+            <div className ="card-body">
+            {/* <h5 className ="card-title">Card title</h5>
+            <p className ="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.This content is a little bit longer.</p> */}
             </div>
           </div>
         </div>
-        <div class="col mb-4">
-          <div class="card h-100">
-            <img src="https://assets.myntassets.com/w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2020/8/31/d977e7ac-67dd-4fa6-b922-fe0057385dfa1598892377205-Crocs.jpg" class="card-img-top" alt="..." />
-            <div class ="card-body">
-            {/* <h5 class ="card-title">Card title</h5>
-            <p class ="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p> */}
+        <div className="col mb-4">
+          <div className="card h-100">
+            <img src="https://assets.myntassets.com/w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2020/8/31/d977e7ac-67dd-4fa6-b922-fe0057385dfa1598892377205-Crocs.jpg" className="card-img-top" alt="..." />
+            <div className ="card-body">
+            {/* <h5 className ="card-title">Card title</h5>
+            <p className ="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p> */}
             </div>
           </div>
         </div>
-        <div class="col mb-4">
-          <div class="card h-100">
-            <img src="https://assets.myntassets.com/w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2020/8/31/a7d3676a-9694-4a84-835e-0408fdad884b1598892377407-Nike.jpg" class="card-img-top" alt="..." />
-            <div class ="card-body">
-            {/* <h5 class ="card-title">Card title</h5>
-            <p class ="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.This content is a little bit longer.</p> */}
+        <div className="col mb-4">
+          <div className="card h-100">
+            <img src="https://assets.myntassets.com/w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2020/8/31/a7d3676a-9694-4a84-835e-0408fdad884b1598892377407-Nike.jpg" className="card-img-top" alt="..." />
+            <div className ="card-body">
+            {/* <h5 className ="card-title">Card title</h5>
+            <p className ="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.This content is a little bit longer.</p> */}
             </div>
           </div>
         </div>
-        <div class="col mb-4">
-          <div class="card h-100">
-            <img src="https://assets.myntassets.com/w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2020/8/31/0206da63-a7cc-4f83-8527-90d7dc74706b1598892377489-Skechers.jpg" class="card-img-top" alt="..." />
-            <div class ="card-body">
-            {/* <h5 class ="card-title">Card title</h5>
-            <p class ="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p> */}
+        <div className="col mb-4">
+          <div className="card h-100">
+            <img src="https://assets.myntassets.com/w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2020/8/31/0206da63-a7cc-4f83-8527-90d7dc74706b1598892377489-Skechers.jpg" className="card-img-top" alt="..." />
+            <div className ="card-body">
+            {/* <h5 className ="card-title">Card title</h5>
+            <p className ="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p> */}
             </div>
           </div>
         </div>
-        <div class="col mb-4">
-          <div class="card h-100">
-            <img src="https://assets.myntassets.com/fl_progressive/h_960,q_80,w_720/v1/assets/images/14983728/2021/7/30/e43ab6d1-38f3-4e21-a43c-7fae5947490f1627641517125na1.jpg" class="card-img-top" alt="..." />
-            <div class ="card-body">
-            {/* <h5 class ="card-title">Card title</h5>
-            <p class ="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.This content is a little bit longer.</p> */}
+        <div className="col mb-4">
+          <div className="card h-100">
+            <img src="https://assets.myntassets.com/fl_progressive/h_960,q_80,w_720/v1/assets/images/14983728/2021/7/30/e43ab6d1-38f3-4e21-a43c-7fae5947490f1627641517125na1.jpg" className="card-img-top" alt="..." />
+            <div className ="card-body">
+            {/* <h5 className ="card-title">Card title</h5>
+            <p className ="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.This content is a little bit longer.</p> */}
             </div>
           </div>
         </div>
-        <div class="col mb-4">
-          <div class="card h-100">
-            <img src="https://assets.myntassets.com/w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2020/8/31/d977e7ac-67dd-4fa6-b922-fe0057385dfa1598892377205-Crocs.jpg" class="card-img-top" alt="..." />
-            <div class ="card-body">
-            {/* <h5 class ="card-title">Card title</h5>
-            <p class ="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p> */}
+        <div className="col mb-4">
+          <div className="card h-100">
+            <img src="https://assets.myntassets.com/w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2020/8/31/d977e7ac-67dd-4fa6-b922-fe0057385dfa1598892377205-Crocs.jpg" className="card-img-top" alt="..." />
+            <div className ="card-body">
+            {/* <h5 className ="card-title">Card title</h5>
+            <p className ="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p> */}
             </div>
           </div>
         </div>
-        <div class="col mb-4">
-          <div class="card h-100">
-            <img src="https://assets.myntassets.com/w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2020/8/31/a7d3676a-9694-4a84-835e-0408fdad884b1598892377407-Nike.jpg" class="card-img-top" alt="..." />
-            <div class ="card-body">
-            {/* <h5 class ="card-title">Card title</h5>
-            <p class ="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.This content is a little bit longer.</p> */}
+        <div className="col mb-4">
+          <div className="card h-100">
+            <img src="https://assets.myntassets.com/w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2020/8/31/a7d3676a-9694-4a84-835e-0408fdad884b1598892377407-Nike.jpg" className="card-img-top" alt="..." />
+            <div className ="card-body">
+            {/* <h5 className ="card-title">Card title</h5>
+            <p className ="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.This content is a little bit longer.</p> */}
             </div>
           </div>
         </div>

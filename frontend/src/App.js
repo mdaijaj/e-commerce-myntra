@@ -6,7 +6,7 @@ import Women from './components/Women'
 import Home from './components/Home';
 import Kid from './components/Kid';
 import HomeLiving from './components/HomeLiving'
-import Errorpage from './components/ErrorPage';
+import ErrorPage from './components/ErrorPage';
 import Register from './components/Register';
 import Login from './components/Login';
 // import Logout from './components/Logout';
@@ -59,7 +59,7 @@ const Routing =()=>{
 
         <Route path="/product/:id" component={ProductDetails}/>
         <Route path="/cart/:id?" component={CartDetails}/>
-        </Switch>
+      </Switch>
   </>
   )
 }

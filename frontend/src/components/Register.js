@@ -18,24 +18,15 @@ const Register = () => {
     setUser({...user,[name]:value})
   }
 
-  const addRegister=async()=>{
+  const addRegister= async()=>{
     try{
       const {email, phone}= user; 
-      console.log("aijajkhkan",email, phone)
       if(!email || !phone){
         window.alert("Please fill input form")
       }
       else{
           const api=await axios.post('/register', user)
-          console.log("api", api)
-          // const res= await fetch('/register', config)
-          // console.log("res--", res)
-          // fetch('/register', config)
-          // .then(response => response.json())
-          // .then(data => {
-          //   console.log("data", data)
-          // }).catch((err)=>{console.log(err.message)})
-          
+          console.log("api", api)   
           // if(!res.status===200 ||!res){
           //   window.alert("Invalid Registration");
           // }
@@ -63,14 +54,16 @@ const Register = () => {
         <h5><strong>Signup</strong> or <strong>Login</strong></h5>
 
         <label>Phone No.
-          <input type="number" className="form-control w-60" onChange={(e)=>handleInput(e)} id="phone" name="phone" value={user.phone} placeholder=" Enter number..." />
+          <input type="number" className="form-control w-80" 
+            onChange={(e)=>handleInput(e)} id="phone" name="phone" value={user.phone} placeholder=" Enter number..." />
         </label>
         <label className="label"> Email
-          <input type="email" className="form-control w-60" onChange={(e)=>handleInput(e)} id="email" name="email" value={user.email} placeholder=" Enter email..." />
+          <input type="email" className="form-control w-60" 
+            onChange={(e)=>handleInput(e)} id="email" name="email" value={user.email} placeholder=" Enter email..." />
           <br/>
           <p>By continueing, I agree to the <p2>Term of Use</p2> &  <p2>Privacy Policy</p2></p>
         </label>
-        <button type="button" className="btn btn-primary btn-lg btn-block" onClick={()=>addRegister({})} >Send</button>
+        <button type="button" className="btn btn-primary btn-lg btn-block" onClick={()=>addRegister()} >Send</button>
       </div>
     </>
   );
