@@ -12,10 +12,11 @@
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.5",
     "crypto-js": "^4.1.1",
-    "express": "^4.17.1",
+    "express": "^4.17.2",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.0.11",
     "nodemailer": "^6.7.0",
+    "nodemon": "^2.0.15",
     "validator": "^13.7.0"
   }
 }

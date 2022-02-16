@@ -18,7 +18,6 @@ import Product_add from './components/category/product_add';
 const Routing =()=>{
   return (
     <>
-   
         <Switch>
         <Route exact path="/">
           <Home/>
@@ -52,7 +51,7 @@ const Routing =()=>{
           <Product_add />
         </Route>
         </Switch>
-  
+
   </>
   )
 }
