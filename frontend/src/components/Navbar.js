@@ -68,7 +68,7 @@ const Navbar = () => {
                                     </button>
                                 </div>
                                 <div className="modal-body">
-                                    <a href="/register"><button type="button">Login / Register </button></a>
+                                    <NavLink to="/register"><button type="button">Login / Register </button></NavLink>
                                 </div>
                                 <div>
                                     <ul>

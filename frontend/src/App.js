@@ -1,5 +1,7 @@
 import React, { createContext, useReducer } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+// import {Route, Switch} from "react-router";
+
 import Navbar from './components/Navbar';
 import Men from './components/Men'
 import Women from './components/Women'
