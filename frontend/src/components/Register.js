@@ -1,113 +1,58 @@
 import react, { useEffect, useState } from "react";
 import { useHistory } from 'react-router-dom';
 import './regis.css'
-import axios from 'axios'
 
-const Register = (props) => {
+const Register = () => {
   const history = useHistory();
   const [username, setUsername] = useState({
     name: "",
     email: "",
-    phoneNo: "",
+    phone: "",
   })
   const loggedIn = false;
+  
+  // const handleChange=(e)=>{
+  //   const {name, value}= e.target
+  //   console.log("value", value)
+  //   console.log("username", username)
+  //   setUsername({...value, username })
+  // }
 
-  const handleChange=(e)=>{
-    const {name, value}= e.target
-    setUsername(preState =>({
-      ...preState, [name]: value
-    }))
-  }
-
-  const submitForm = (e) => {
+  const submitForm= async (e)=>{
     e.preventDefault()
-    // const {name, email, phoneNo}= username
-    // console.log("item", item)
-    console.log("aaaa")
-    if(username.email.length){
-      const payload={
-        "name": username.name,
-        "email": username.email,
-        "phoneNo": username.phoneNo
-      }
-
-      axios.post('/register', payload)
-      .then((response)=>{
-        console.log("response", response)
-        if(response.status=='200'){
-          setUsername(preState =>({
-            ...preState, "successMessage": "Registration is Sucessfully!"
-          }))
-          console.log("response", response)
-          localStorage.setItem(JSON.stringify(username))
-          history.push('/otp')
-        }
-        else{
-          props.showError("Some error ocurred");
-        }   
+    try{
+      if (username.email === '' || username.phone === '') {
+        alert("please fill all fields!")
+      };
+      const loginapi= await fetch('/register', {
+        method: "Post",
+        body: JSON.stringify({
+          name: username.name,
+          email: username.email,
+          phone: username.phone
+        }),
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        // credentials: "include"
       })
-      .catch((err)=>{
-        console.log(err.mesage)
-      })
-
+      console.log("loginapi", loginapi)
+      const result= await loginapi.json()
+      console.log("result", result)
+      localStorage.setItem(JSON.stringify(result))
+      history.push('/otp')
     }
-    else{
-      props.showError('Please enter valid username and password')  
-    }
-    const requestOption={
-      method: "Post",
-      headers: {
-        "content-type": "application/json",
-        "Accept": "application/json"
-      },
-      body: JSON.stringify({
-        name: username.name,
-        email: username.email,
-        phoneNo: username.phoneNo
-      })
+    catch(err){
+      console.log("err.message")
     }
     
-    // const result = await fetch('/register', requestOption )
-    // console.log("result", result)
-    // const userInf = await result.json()
-    // console.log("result", userInf)
-    // localStorage.setItem(JSON.stringify(userInf))
-    // history.push('/otp')
-    // e.prevendDefault();
-    // const {name, email, phoneNo}= username
-    // const loginapi= await fetch('/register', {
-    //   method: "Post",
-    //   body: JSON.stringify(name, email, phoneNo),
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     "Accept": "application/json"
-    //   },
-    //   credentials: "include"
-    // })
-    // const result= await loginapi.json()
-    // const result={
-    //   name: name,
-    //   email: email,
-    //   phoneNo: phoneNo,
-    // }
-    // console.log("result", result)
-    // localStorage.setItem(JSON.stringify(result))
-    // history.push('/otp')
   }
-
-  // const eventHandling=(e)=>{
-  //   // const {name, value}=e.target
-  //   console.log("e.target.value", e)
-  //   const name= e.target.name
-  //   const value= e.target.value
-  //   // console.log("e.target.name", e.target.name, e.target.value)
-  //   // setUsername(value)
-  // }
 
 
   return (
     <>
-      <h2>{username.phoneNo}</h2>
+      <h2>{username.email}</h2>
       <div className="signDiv">
         <div className="img">
           <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/2021/10/16/c3f9ae89-8072-41e1-9fed-6eb9bb699fe91634323933951-500_hamburger.png" width="420px" height="200px"></img>
@@ -120,9 +65,9 @@ const Register = (props) => {
               <label className="label"> <br />
                 <input className="form-control"
                   type="Number"
-                  name="phoneNo"
-                  value={username.phoneNo}
-                  onChange={handleChange}
+                  name="phone"
+                  value={username.phone}
+                  onChange={(e) => setUsername({...username,[e.target.name]:e.target.value})}
                   placeholder=" +91  |  Mobile Number..."
                 />
               </label>
@@ -130,7 +75,7 @@ const Register = (props) => {
                 <input className="form-control w-60"
                   type="text"
                   name="email"
-                  onChange={handleChange}
+                  onChange={(e) => setUsername({...username,[e.target.name]:e.target.value})}
                   value={username.email}
                   placeholder=" Email..."
                 />
@@ -145,8 +90,6 @@ const Register = (props) => {
     </>
   );
 }
-
-
 
 
 export default Register;
