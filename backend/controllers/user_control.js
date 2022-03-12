@@ -19,9 +19,11 @@ const register= async(req, res)=>{
         console.log("userExits",userExits )
         if(!userExits){
             const userData= await User.create(req.body)
+            const token= await userData.generateAuthToken()
+            // console.log("token", token)
+            // console.log("userData", userData)
             sendToken(userData, 201, res)
-            const token=await userData.generateAuthToken()
-            console.log("token", token)
+            // sendEmail(token)
             return res.status(200).send({message:"user resitered save data", token: token, data: userData})
         }else{
             console.log("user allready register!")

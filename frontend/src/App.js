@@ -49,6 +49,10 @@ const Routing =()=>{
           <Login/>
         </Route>
 
+        <Route path="/otp">
+          <Login/>
+        </Route>
+
         <Route>
           <Product_add />
         </Route>

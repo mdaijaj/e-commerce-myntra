@@ -40,7 +40,7 @@ const Register = () => {
       console.log("loginapi", loginapi)
       const result= await loginapi.json()
       console.log("result", result)
-      localStorage.setItem(JSON.stringify(result))
+      localStorage.setItem("mytime", JSON.stringify(result))
       history.push('/otp')
     }
     catch(err){
@@ -52,7 +52,6 @@ const Register = () => {
 
   return (
     <>
-      <h2>{username.email}</h2>
       <div className="signDiv">
         <div className="img">
           <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/2021/10/16/c3f9ae89-8072-41e1-9fed-6eb9bb699fe91634323933951-500_hamburger.png" width="420px" height="200px"></img>
