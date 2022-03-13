@@ -7,7 +7,7 @@ const crypto= require('crypto')
 
 //register user
 const register= async(req, res)=>{
-    // try{
+    try{
         const {
             name,
             email,
@@ -19,21 +19,21 @@ const register= async(req, res)=>{
         console.log("userExits",userExits )
         if(!userExits){
             const userData= await User.create(req.body)
-            const token= await userData.generateAuthToken()
-            // console.log("token", token)
-            // console.log("userData", userData)
-            sendToken(userData, 201, res)
-            // sendEmail(token)
-            return res.status(200).send({message:"user resitered save data", token: token, data: userData})
+            let otp= Math.floor(1000 + Math.random() * 90000);
+            // const token= await userData.generateAuthToken()
+            // sendToken(userData, 201, res)
+            console.log("otp", otp)
+            await sendEmail(userData)
+            return res.status(200).send({message:"user resitered save data",otp: otp, data: userData})
         }else{
             console.log("user allready register!")
             return res.send("user allready registered")
         }
-    // }
-    // catch(err){
-    //     console.log(err.message)
-    //     res.send(err)
-    // }   
+    }
+    catch(err){
+        console.log(err.message)
+        res.send(err)
+    }   
 }
 
 //login user

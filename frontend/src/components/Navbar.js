@@ -1,11 +1,27 @@
 // import 'bootstrap/dist/css/bootstrap.css'
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {NavLink} from 'react-router-dom';
 import Register from './Register';
 import "../App.css"  //22
 
 const Navbar = () => {
-    
+    let localdata=localStorage.getItem("mytime")
+    if(localdata){
+        let userInf= JSON.parse(localdata).data
+        localdata=userInf
+    }else{
+        localdata=""
+    }
+
+    useEffect(()=>{
+        removeUser()
+    }, [])
+
+    const removeUser=()=>{
+        console.log("user is not define")
+        const userdata=localStorage.removeItem("mytime");
+        return userdata
+    }
 
     return (
         <>
@@ -67,9 +83,20 @@ const Navbar = () => {
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                                <div className="modal-body">
-                                    <NavLink to="/register"><button type="button">Login / Register </button></NavLink>
-                                </div>
+                                {localdata ? 
+                                    <div className="modal-body">
+                                        <h6 style={{textAlign:'center'}}>Welcome {localdata.name }</h6>
+                                        <span className="modal-body" style={{textAlign:"center"}}>
+                                            <button style={{textAlign:'center'}} onClick={removeUser} type="button">Logout  </button>
+                                        </span>
+                                    </div>
+                                    : 
+                                    <div className="modal-body">
+                                        <NavLink to="/register"><button type="button">Login / Register </button></NavLink>
+                                    </div>
+                                }
+                               
+                                
                                 <div>
                                     <ul>
                                         <li><NavLink to="#">Orders</NavLink></li>
@@ -103,8 +130,6 @@ const Navbar = () => {
         </>
     )
 }
-
-
 
 
 export default Navbar;

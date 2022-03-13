@@ -7,6 +7,7 @@ const sendToken= async(userData,statusCode,res)=>{
     console.log("userData......", userData)
     userData["token"]= "aijaj"
     console.log("userdata", userData)
+    
     //option of cookies
     const options={
         expires: new Date(Date.now() + 5*24*60*60*1000),
@@ -14,12 +15,16 @@ const sendToken= async(userData,statusCode,res)=>{
     }
 
     
-    res.status(statusCode).cookie("token", token, options).send({
-        success: true,
-        userData,
-        token
-    });
-    // return userData;
+    // res.status(statusCode).cookie("token", token, options).send({
+    //     success: true,
+    //     userData,
+    //     token
+    // });
+    return {
+        data: userData,
+        token: token,
+        status: true
+    }; 
 }
 
 module.exports= sendToken;

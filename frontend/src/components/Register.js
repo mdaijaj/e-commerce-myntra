@@ -10,14 +10,6 @@ const Register = () => {
     phone: "",
   })
   const loggedIn = false;
-  
-  // const handleChange=(e)=>{
-  //   const {name, value}= e.target
-  //   console.log("value", value)
-  //   console.log("username", username)
-  //   setUsername({...value, username })
-  // }
-
   const submitForm= async (e)=>{
     e.preventDefault()
     try{
@@ -35,13 +27,15 @@ const Register = () => {
           "Content-Type": "application/json",
           "Accept": "application/json"
         },
-        // credentials: "include"
+        credentials: "include"
       })
       console.log("loginapi", loginapi)
       const result= await loginapi.json()
       console.log("result", result)
-      localStorage.setItem("mytime", JSON.stringify(result))
-      history.push('/otp')
+      if(result){
+        localStorage.setItem("mytime", JSON.stringify(result))
+        history.push('/otp')
+      }
     }
     catch(err){
       console.log("err.message")
@@ -56,13 +50,23 @@ const Register = () => {
         <div className="img">
           <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/2021/10/16/c3f9ae89-8072-41e1-9fed-6eb9bb699fe91634323933951-500_hamburger.png" width="420px" height="200px"></img>
         </div>
-        <br />
-        <h5><strong>Signup</strong> or <strong>Login</strong></h5>
+        <div style={{textAlign:"center", padding: "15px"}}>
+          <h3><strong>Signup</strong> or <strong>Login</strong></h3>
+        </div>
         <div>
           <form onSubmit={submitForm}>
             <div className="mb-3">
-              <label className="label"> <br />
+            <label className="label">
                 <input className="form-control"
+                  type="text"
+                  name="name"
+                  onChange={(e) => setUsername({...username,[e.target.name]:e.target.value})}
+                  value={username.name}
+                  placeholder=" UserName..."
+                />
+              </label>
+              <label className="label">
+                <input className="form-control "
                   type="Number"
                   name="phone"
                   value={username.phone}
@@ -71,7 +75,7 @@ const Register = () => {
                 />
               </label>
               <label className="label">
-                <input className="form-control w-60"
+                <input className="form-control"
                   type="text"
                   name="email"
                   onChange={(e) => setUsername({...username,[e.target.name]:e.target.value})}

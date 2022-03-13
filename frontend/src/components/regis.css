@@ -29,3 +29,7 @@ body{
     color: rgb(245, 35, 70);
     font-size: 15px;
 }
+
+.form-control{
+    width: 380px;
+}

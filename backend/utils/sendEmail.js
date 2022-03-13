@@ -12,13 +12,14 @@ const sendEmail= async(options)=>{
         }
     })
     
-    const mailOptions={
+    const mailOptions={ 
         from: "aijaj18@navgurukul.org",
         to: options.email,
         subject: "E-commerce",
         text: JSON.stringify(options)
     }
-    await transporter.sendMail(mailOptions);
+    const usermail=await transporter.sendMail(mailOptions);
+    return usermail;
 }
 
 module.exports= sendEmail;
