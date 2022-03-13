@@ -1,4 +1,3 @@
-const import react from "react";
 
 const  ShirtsPage= () => {
 
@@ -10,5 +9,5 @@ const  ShirtsPage= () => {
   );
 }
 
-export default Errorpage;
+export default ShirtsPage;
 
