@@ -7,8 +7,8 @@ const sendEmail= async(options)=>{
         port: 465,
         service: "gmail",
         auth: {
-            user:"aijaj18@navgurukul.org",
-            pass: "aijaj@#123"
+            user: process.env.User
+            pass: process.env.Password
         }
     })
     
